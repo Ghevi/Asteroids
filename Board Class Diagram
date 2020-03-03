@@ -7,7 +7,7 @@ main(args : String[]) : void
 
 RepaintTheBoard
 
-theBoard
+theGameBoard
 
 RepaintTheBoard : void
 

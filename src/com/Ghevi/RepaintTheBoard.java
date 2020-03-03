@@ -2,15 +2,15 @@ package com.Ghevi;
 
 public class RepaintTheBoard implements Runnable {
 
-    Board theBoard;
+    GameBoard theGameBoard;
 
-    public RepaintTheBoard(Board theBoard){
-        this.theBoard = theBoard;
+    public RepaintTheBoard(GameBoard theGameBoard){
+        this.theGameBoard = theGameBoard;
     }
 
 
     @Override
     public void run() {
-        theBoard.repaint();
+        theGameBoard.repaint();
     }
 }

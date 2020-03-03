@@ -15,14 +15,9 @@ class Rock extends Polygon {
     int xDirection = 1;
     int yDirection = 1;
 
-
-    // For JApplet
-    int width = ExampleBoard.WIDTH;
-    int height = ExampleBoard.HEIGHT;
-
     // Get the board width and height
-    int width = Lesson50.boardWidth;
-    int height = Lesson50.boardHeight;
+    int width = GameBoard.boardWidth;
+    int height = GameBoard.boardHeight;
 
     // Will hold the x & y coordinates for the Polygons
     int[] polyXArray, polyYArray;

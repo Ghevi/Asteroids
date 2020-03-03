@@ -11,14 +11,16 @@ public class GameDrawingPanel extends JComponent {
     int[] polyXArray = Rock.sPolyXArray;
     int[] polyYArray = Rock.sPolyYArray;
 
-    int width = Board.boardWidth;
-    int height = Board.boardHeight;
+    SpaceShip theShip = new SpaceShip();
+
+    int width = GameBoard.boardWidth;
+    int height = GameBoard.boardHeight;
 
     public GameDrawingPanel(){
 
         for(int i = 0; i < 50; i++){
-            int randomStartXPos = (int) (Math.random() * (Board.boardWidth - 40) + 1);
-            int randomStartYPos = (int) (Math.random() * (Board.boardHeight - 40) + 1);
+            int randomStartXPos = (int) (Math.random() * (GameBoard.boardWidth - 40) + 1);
+            int randomStartYPos = (int) (Math.random() * (GameBoard.boardHeight - 40) + 1);
 
             rocks.add(new Rock(Rock.getPolyXArray(randomStartXPos), Rock.getPolyYArray(randomStartYPos), 13, randomStartXPos, randomStartYPos));
         }
@@ -39,5 +41,10 @@ public class GameDrawingPanel extends JComponent {
             rock.move();
             graphicSettings.draw(rock);
         }
+
+        theShip.move();
+        graphicSettings.draw(theShip);
+
+
     }
 }
