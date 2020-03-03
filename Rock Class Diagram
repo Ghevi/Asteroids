@@ -1,0 +1,22 @@
+Unified Modeling Language : Class Diagram
+
+Rock
+
+uLeftXPos : integer
+uLeftYPos : integer
+xDirection : integer
+yDirection : integer
+boardWidth : integer
+boardHeight : integer
+polyXArray : integer[]
+polyYArray : integer[]
+sPolyXArray : integer[]
+sPolyYArray : integer[]
+
+Rock(polyXArray : integer[], polyYArray : integer[], pointsInPoly : integer, randomStartXPos : integer, randomStartYPos : integer) : void
+
+move() : void
+
+getpolyXArray(randomStartXPos : integer) : integer[]
+
+getpolyYArray(randomStartYPos : integer) : integer[]
