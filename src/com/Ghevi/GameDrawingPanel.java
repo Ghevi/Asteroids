@@ -19,11 +19,12 @@ public class GameDrawingPanel extends JComponent {
 
     public GameDrawingPanel(){
 
-        for(int i = 0; i < 50; i++){
+        for(int i = 0; i < 10; i++){
             int randomStartXPos = (int) (Math.random() * (GameBoard.boardWidth - 40) + 1);
             int randomStartYPos = (int) (Math.random() * (GameBoard.boardHeight - 40) + 1);
 
             rocks.add(new Rock(Rock.getPolyXArray(randomStartXPos), Rock.getPolyYArray(randomStartYPos), 13, randomStartXPos, randomStartYPos));
+            Rock.rocks = rocks;
         }
     }
 

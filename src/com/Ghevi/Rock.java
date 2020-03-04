@@ -1,6 +1,7 @@
 package com.Ghevi;
 
-import java.awt.Polygon;
+import java.awt.*;
+import java.util.ArrayList;
 
 // Extending the Polygon class because I'm drawing Polygons
 
@@ -14,6 +15,11 @@ class Rock extends Polygon {
     // it hits something and determines how fast it moves
     int xDirection = 1;
     int yDirection = 1;
+
+    int rockWidth = 26;
+    int rockHeight = 31;
+
+    static ArrayList<Rock> rocks = new ArrayList<Rock>();
 
     // Get the board width and height
     int width = GameBoard.boardWidth;
@@ -44,7 +50,29 @@ class Rock extends Polygon {
 
     }
 
+    public Rectangle getBounds(){
+        return new Rectangle(super.xpoints[0], super.ypoints[0], rockWidth, rockHeight);
+    }
+
     public void move() {
+
+        Rectangle rockToCheck = this.getBounds();
+
+        for(Rock rock : rocks){
+            Rectangle otherRock = rock.getBounds();
+
+            if(rock != this && otherRock.intersects(rockToCheck)){
+                int tempXDirection = this.xDirection;
+                int tempYDirection = this.yDirection;
+
+                this.xDirection = rock.xDirection;
+                this.yDirection = rock.yDirection;
+
+                rock.xDirection = tempXDirection;
+                rock.yDirection = tempYDirection;
+            }
+
+        }
 
         // Get the upper left and top most point for the Polygon
         // This will be dynamic later on
