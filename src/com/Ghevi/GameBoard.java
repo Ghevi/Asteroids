@@ -38,16 +38,29 @@ public class GameBoard extends JFrame {
                 // KEYCODE ==> W: 87, A: 65, S: 83, D: 68
                 if(e.getKeyCode() == 87){
                     System.out.println("Forward");
+
+                    keyHeldCode = e.getKeyCode();
+                    keyHeld = true;
+
                 } else if(e.getKeyCode() == 83) {
                     System.out.println("Backward");
+
+                    keyHeldCode = e.getKeyCode();
+                    keyHeld = true;
+
                 } else if(e.getKeyCode() == 68){
                     System.out.println("Rotate Right");
+
                     keyHeldCode = e.getKeyCode();
                     keyHeld = true;
+
                 } else if(e.getKeyCode() == 65){
+
                     System.out.println("Rotate Left");
+
                     keyHeldCode = e.getKeyCode();
                     keyHeld = true;
+
                 }
             }
 

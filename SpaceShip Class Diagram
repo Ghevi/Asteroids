@@ -1,0 +1,49 @@
+SpaceShip
+
+gameBoardWidth : int
+gameBoardHeight : int
+centerX : double
+centerY : double
+polyXArray : int[]
+polyYArray : int[]
+shipWidth : int
+shipHeight : int
+uLeftXPos : double
+uLeftYPos : double
+xVelocity : double
+yVelocity : double
+rotationAngle : double
+movingAngle : double
+
+SpaceShip( int[], int[], int[], )
+getXCenter() : double
+getYCenter() : double
+setXCenter() : double
+setYCenter() : double
+increaseXPos(double) : void
+increaseYPos(double) : void
+getULeftXPos() : double
+getULeftYPos() : double
+setULeftXPos() : double
+setULeftYPos() : double
+getShipWidth() : int
+getShipHeight() : int
+getXVelocity() : double
+getYVelocity() : double
+setXVelocity() : double
+setYVelocity() : double
+increaseXVelocity(double) : void
+increaseYVelocity(double) : void
+decreaseXVelocity(double) : void
+decreaseYVelocity(double) : void
+setMovingAngle(double) : void
+getMovingAngle(double) : void
+increaseMovingAngle(double) : void
+shipXMoveAngle(double) : double
+shipYMoveAngle(double) : double
+getRotationAngle(double) : void
+setRotationAngle(double) : void
+increaseRotationAngle(double) : void
+decreaseRotationAngle(double) : void
+getBounds() : void
+move() : void

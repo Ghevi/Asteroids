@@ -17,6 +17,6 @@ Rock(polyXArray : integer[], polyYArray : integer[], pointsInPoly : integer, ran
 
 move() : void
 
-getpolyXArray(randomStartXPos : integer) : integer[]
+getPolyXArray(randomStartXPos : integer) : integer[]
 
-getpolyYArray(randomStartYPos : integer) : integer[]
+getPolyYArray(randomStartYPos : integer) : integer[]
