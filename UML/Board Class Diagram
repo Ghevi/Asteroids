@@ -1,0 +1,26 @@
+Unified Modeling Language : Board Class Diagram
+
+boardWidth : integer
+boardHeight : integer
+
+main(args : String[]) : void
+
+RepaintTheBoard
+
+theGameBoard
+
+RepaintTheBoard : void
+
+run() : void
+
+GameDrawingPanel
+
+rocks : ArrayList<Rock>
+polyXArray : int[]
+polyYArray : int[]
+width : integer
+height : integer
+
+GameDrawingPanel() : void
+
+paint(g : Graphics) : void
