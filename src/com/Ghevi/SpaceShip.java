@@ -47,7 +47,7 @@ public class SpaceShip extends Polygon {
     public double getYVelocity(){ return yVelocity; }
 
     public void setXVelocity(double xVel){ this.xVelocity = xVel; }
-    public void seYyVelocity(double yVel){ this.yVelocity = yVel; }
+    public void setYVelocity(double yVel){ this.yVelocity = yVel; }
 
     public void increaseXVelocity(double xVelInc){ this.xVelocity += xVelInc; }
     public void increaseYVelocity(double yVelInc){ this.yVelocity += yVelInc; }
@@ -84,7 +84,7 @@ public class SpaceShip extends Polygon {
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(getShipWidth() - 14, getShipHeight() - 15, getShipWidth(), getShipHeight());
+        return new Rectangle((int) getXCenter() - 14, (int) getYCenter() - 14, getShipWidth(), getShipHeight());
     }
 
     // Get spaceship nose vectors

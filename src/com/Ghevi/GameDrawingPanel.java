@@ -19,7 +19,7 @@ public class GameDrawingPanel extends JComponent {
 
     public GameDrawingPanel(){
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 15; i++){
             int randomStartXPos = (int) (Math.random() * (GameBoard.boardWidth - 40) + 1);
             int randomStartYPos = (int) (Math.random() * (GameBoard.boardHeight - 40) + 1);
 
@@ -42,8 +42,11 @@ public class GameDrawingPanel extends JComponent {
         graphicSettings.setPaint(Color.WHITE);
 
         for (Rock rock : rocks) {
-            rock.move();
-            graphicSettings.draw(rock);
+            if(rock.onScreen) {
+                rock.move(theShip, GameBoard.laserProjectiles);
+
+                graphicSettings.draw(rock);
+            }
         }
 
         // Handles spinning the ship in the clockwise direction when the D key is pressed and held

@@ -57,7 +57,7 @@ public class PhasedLaser extends Polygon {
     public double getMovingAngle(){ return this.movingAngle; }
 
     public Rectangle getBounds(){
-        return new Rectangle(getWidth() - 6, getHeight() - 6, getWidth(), getHeight());
+        return new Rectangle((int) getXCenter() - 6, (int) getYCenter() - 6, getWidth(), getHeight());
     }
 
     public double laserXMoveAngle(double xMoveAngle){
