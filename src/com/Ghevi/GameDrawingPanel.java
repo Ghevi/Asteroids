@@ -12,7 +12,7 @@ public class GameDrawingPanel extends JComponent {
     int[] polyXArray = Rock.sPolyXArray;
     int[] polyYArray = Rock.sPolyYArray;
 
-    SpaceShip theShip = new SpaceShip();
+    static SpaceShip theShip = new SpaceShip();
 
     int width = GameBoard.boardWidth;
     int height = GameBoard.boardHeight;
@@ -82,6 +82,15 @@ public class GameDrawingPanel extends JComponent {
         graphicSettings.translate(theShip.getXCenter(), theShip.getYCenter());
         graphicSettings.rotate(Math.toRadians(theShip.getRotationAngle()));
         graphicSettings.draw(theShip);
+
+        for(PhasedLaser laser : GameBoard.laserProjectiles){
+            laser.move();
+            if(laser.onScreen){
+                graphicSettings.setTransform(identity);
+                graphicSettings.translate(laser.getXCenter(), laser.getYCenter());
+                graphicSettings.draw(laser);
+            }
+        }
 
 
     }

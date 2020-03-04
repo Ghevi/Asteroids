@@ -87,6 +87,20 @@ public class SpaceShip extends Polygon {
         return new Rectangle(getShipWidth() - 14, getShipHeight() - 15, getShipWidth(), getShipHeight());
     }
 
+    // Get spaceship nose vectors
+
+    public double getShipNoseX(){
+
+        // x1 + cos(angle) * length of the line
+        return this.getXCenter() + Math.cos(rotationAngle) * 14;
+    }
+
+    public double getShipNoseY(){
+
+        // x1 + cos(angle) * length of the line
+        return this.getYCenter() + Math.sin(rotationAngle) * 14;
+    }
+
     public void move(){
 
         this.increaseXPos(this.getXVelocity());

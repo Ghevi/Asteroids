@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +16,10 @@ public class GameBoard extends JFrame {
     public static boolean keyHeld = false;
 
     public static int keyHeldCode;
+
+    // ArrayList holds laser projectiles
+
+    public static ArrayList<PhasedLaser> laserProjectiles = new ArrayList<PhasedLaser>();
 
     public static void main(String[] args) {
 
@@ -61,7 +66,15 @@ public class GameBoard extends JFrame {
                     keyHeldCode = e.getKeyCode();
                     keyHeld = true;
 
-                }
+                } else
+
+                    // Check if the spacebar key is press to fire lasers
+                    if(e.getKeyCode() == KeyEvent.VK_SPACE){
+                        laserProjectiles.add(new PhasedLaser(GameDrawingPanel.theShip.getShipNoseX(),
+                                                             GameDrawingPanel.theShip.getShipNoseY(),
+                                                             GameDrawingPanel.theShip.getRotationAngle()));
+
+                    }
             }
 
             @Override
