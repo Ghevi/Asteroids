@@ -2,6 +2,7 @@ package com.Ghevi;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 public class GameDrawingPanel extends JComponent {
@@ -30,6 +31,8 @@ public class GameDrawingPanel extends JComponent {
 
         Graphics2D graphicSettings = (Graphics2D)g;
 
+        AffineTransform identity = new AffineTransform();
+
         graphicSettings.setColor(Color.BLACK);
         graphicSettings.fillRect(0,0, getWidth(), getHeight());
 
@@ -42,7 +45,16 @@ public class GameDrawingPanel extends JComponent {
             graphicSettings.draw(rock);
         }
 
+        if(GameBoard.keyHeld == true && GameBoard.keyHeldCode ==  68){
+            SpaceShip.rotationAngle += 10;
+        } else if(GameBoard.keyHeld == true && GameBoard.keyHeldCode ==  65){
+            SpaceShip.rotationAngle -= 10;
+        }
+
         theShip.move();
+        graphicSettings.setTransform(identity);
+        graphicSettings.translate(GameBoard.boardWidth / 2, GameBoard.boardHeight / 2);
+        graphicSettings.rotate(Math.toRadians(SpaceShip.rotationAngle));
         graphicSettings.draw(theShip);
 
 
